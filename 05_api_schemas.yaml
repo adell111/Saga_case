@@ -1,0 +1,93 @@
+# JSON-схемы API кредитного конвейера — кейс 2
+#
+# Как заполнять:
+#   1. Не меняй schemas Application (образец).
+#   2. Заполни Decision, ExternalRequest, Error.
+#   3. Проверь: файл должен валидироваться на https://www.jsonschemavalidator.net/
+
+openapi: 3.0.3
+info:
+  title: Fin-Tech Credit Conveyor
+  version: "1.0.0"
+  description: Приём заявки, эмуляция БКИ/СМЭВ, скоринг, предварительное решение
+
+servers:
+  - url: http://localhost:8082
+
+# ---------- ОБРАЗЕЦ: Application, не трогать ----------
+components:
+  schemas:
+    Application:
+      type: object
+      required: [app_id, age, income, employment, family, amount, term]
+      additionalProperties: false
+      properties:
+        app_id: {type: string, pattern: '^app_[0-9]{4}$'}
+        client_id: {type: string, pattern: '^cli_[0-9]{4}$'}
+        passport_hash: {type: string, pattern: '^[a-f0-9]{16}$'}
+        age: {type: integer, minimum: 18, maximum: 70}
+        income: {type: number, exclusiveMinimum: 0}
+        employment:
+          enum: [employed, self-employed, student, retired, unemployed]
+        family:
+          enum: [single, married, children]
+        amount: {type: number, minimum: 10000, maximum: 5000000}
+        term: {type: integer, minimum: 3, maximum: 60}
+
+# ---------- TODO: заполни эти схемы ----------
+    Decision:
+      type: object
+      required: [app_id, decision, reason, score, dti]
+      properties:
+        # TODO: app_id, decision (enum APPROVED/REFUSED/NEED_MORE_DATA/MANUAL_REVIEW),
+        #       reason (string), score (0-100), dti (>= 0),
+        #       amount_approved, term_approved, rate,
+        #       bki ({score, delinquency}), smev (enum)
+        ?
+
+    ExternalRequest:
+      type: object
+      properties:
+        # TODO: request_id, service (BKI|SMEV), status, latency_ms, result
+        ?
+
+    Error:
+      type: object
+      required: [error_code, message]
+      properties:
+        # TODO: error_code, message, retryable, details
+        ?
+
+# ---------- paths ----------
+paths:
+  # ---------- ОБРАЗЕЦ: health ----------
+  /health:
+    get:
+      summary: Проверка живости
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: {type: object, properties: {status: {type: string}}}
+
+  # ---------- TODO: подача заявки ----------
+  /api/v1/applications:
+    post:
+      summary: TODO
+      # TODO: requestBody Application, responses 201/422/409
+      ?
+
+  # ---------- TODO: решение по заявке ----------
+  /api/v1/applications/{id}/decision:
+    get:
+      summary: TODO
+      # TODO: responses 200 (Decision), 404, 425 (ещё считается)
+      ?
+
+  # ---------- TODO: пересчёт (опционально) ----------
+  /api/v1/applications/{id}/recalculate:
+    post:
+      summary: TODO
+      # TODO: responses 200, 409
+      ?
