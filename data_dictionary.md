@@ -23,18 +23,54 @@
 |-|-|-|-|-|-|-|
 |age|integer|да|18-70|25|AGE_OUT_OF_RANGE; MISSING_AGE*|Возрастной ценз продукта|
 |income|number|да|> 0, ₽/мес; порог отказа < 30 000|120000|MISSING_INCOME; LOW_INCOME|База скоринга,DTI|
-|employment|enum|да|employedё / self-employed / unemployed /student / retired|employed|INVALID_EMPLOYMENT|Стабильность дохода. unemployed = немедленный отказ|
+|employment|enum|да|employedы / self-employed / unemployed /student / retired|employed|INVALID_EMPLOYMENT|Стабильность дохода. unemployed = немедленный отказ|
 |family|enum|да|single / married / children|married|INVALID_FAMILY*|Финансковая нагрузка домохозяйства|
 |amount|integer|да|10 000 - 5 000 000 ₽; доп. лимит: amount ≤ 10 × income|50000|AMOUNT_LIMIT; AMOUNT_OUT_OF_RANGE*|Тело кредита. Проверяется |
 |term|number|да|3-60 мес.|31|TERM_OUT_OF_RANGE*|Срок кредита --> множитель аннуитета.|
 |decision|enum|да (сервер)|APPROVED/ REFUSED/ NEED_MORE_DATA/ MANUAL_REVIEW|APPROVED|—|Итог конвейера. Вычисляется. Пользователем не изменяется.|
 |reason|enum|условно|"" если 'APPROVED', иначе ровно 1 код ошибки из 08_reasonds.md|AMOUNT_LIMIT|—|Объяснение решения. У каждого не 'APPROVED' есть причина.|
-|client\_id|string|?|?|?|?|?|
-|passport\_hash|?|?|?|?|?|?|
-|dti|number|?|?|?|?|?|
-|bki\_score|?|?|?|?|?|?|
-|smev\_status|enum|?|MATCH / MISMATCH / TIMEOUT / NOT_CALLED|?|?|?|
+|client\_id|string| да |`^cli_[0-9]{4}$`|cli_0001|INVALID_CLIENT_ID*|Внешний ключ на клиента; вход для эмулятора СМЭВ|
+|passport\_hash|string| да |`^[a-f0-9]{16}$`; только SHA-256, оригинал не хранится|f727a849055f2224|INVALID_PASSPORT_HASH*|Вход для эмулятора БКИ. Позволяет проверить клиента, не храня ПДн. Восстановить паспорт из хеша нельзя|
+|dti|number|да (сервер)|≥ 0, 2 знака после точки; порог 0.5|0.12|HIGH_DTI|`dti = аннуитетный платёж / доход`. При `> 0.5 → HIGH_DTI`. Пусто только при NEED_MORE_DATA|
+|bki\_score|integer|нет|300 ≤ score ≤ 850; < 550 = отказ|720|—|Результат БКИ. Пусто, если БКИ не вызывалось (заявка отсеяна раньше). `delinquency=true` → отказ независимо от балла|
+|smev\_status|enum|да|MATCH / MISMATCH / TIMEOUT / NOT_CALLED|MATCH|EXTERNAL_TIMEOUT|Верификация личности по паспорту.|
+## Справочники (enum-значения)
 
+### 1. `employment` — 5 значений
+
+| Значение | Баллы скоринга | Смысл |
+|---|---|---|
+| `employed` | 25 | Наёмный работник, стабильный доход |
+| `self-employed` | 20 | Самозанятый/ИП, доход менее предсказуем |
+| `retired` | 10 | Пенсионер, фиксированный доход |
+| `student` | 5 | Студент, дохода обычно нет |
+| `unemployed` | 0 | Безработный → `INVALID_EMPLOYMENT` |
+
+### 2. `family` — 3 значения
+
+| Значение | Баллы | Смысл |
+|---|---|---|
+| `married` | 15 | Есть второй доход / устойчивое домохозяйство |
+| `children` | 15 | Есть иждивенцы, но выше ответственность и стабильность |
+| `single` | 10 | Нет подтверждённой финансовой поддержки |
+
+### 3. `decision` — 4 значения
+
+| Значение | Когда | Что видит клиент |
+|---|---|---|
+| `APPROVED` | Все правила пройдены, `score ≥ 60` | «Предварительно одобрено» + сумма/срок/ставка |
+| `REFUSED` | Сработало правило отказа | Причина человеческим языком |
+| `NEED_MORE_DATA` | Пустое поле или таймаут внешнего сервиса | «Укажите доход» / «Попробуйте позже» |
+| `MANUAL_REVIEW` | Пограничный случай (опционально) | «Заявка на ручной проверке» |
+
+### 4. `smev_status` — 4 значения
+
+| Значение | Когда | Влияние на решение |
+|---|---|---|
+| `MATCH` | Данные совпали (9 из 10) | Продолжаем |
+| `MISMATCH` | `md5(client_id) % 10 == 0` | `REFUSED` / `SMEV_MISMATCH` |
+| `TIMEOUT` | Ответ > 3 с даже после retry | `NEED_MORE_DATA` / `EXTERNAL_TIMEOUT` |
+| `NOT_CALLED` | До СМЭВ не дошли (упали на валидации) | Решение уже принято раньше |
 ## Критерий приёмки
 
 * \[ ] Все 14 колонок описаны
