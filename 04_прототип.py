@@ -39,24 +39,76 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-OUT_FIELDS = ["app_id", "decision", "reason", "score", "dti"]
+OUT_FIELDS = ["app_id", "decision", "reason", "score", "dti", "client_text"]
 
 # пороги вынесены наверх, чтобы не искать их по коду (см. 02_правила.md)
-MIN_AGE, MAX_AGE = 18, 70
-MIN_INCOME = 30000          # меньше этого дохода сразу отказ
 MIN_SCORE = 60              # ниже этого балла отказ
 MAX_DTI = 0.5               # платёж не больше половины дохода
 MAX_AMOUNT_MULT = 10        # сумма не больше 10 доходов
 BKI_MIN_SCORE = 500         # ниже этого балла БКИ отказ BKI_DELINQUENCY
-AMOUNT_RANGE = (10000, 5000000)
-TERM_RANGE = (3, 60)
-ANNUAL_RATE = 0.18          # ставка prod_standard, по ней везде считаем dti
+
+# параметры продукта, заполняются из Данные/products.csv (см. load_product)
+PRODUCT_ID = "prod_standard"
+PRODUCTS_PATH = Path(__file__).resolve().parent / "Данные" / "products.csv"
+MIN_AGE = MAX_AGE = None    # возраст клиента
+MIN_INCOME = None           # меньше этого дохода сразу отказ
+AMOUNT_RANGE = None         # (min_amount, max_amount)
+TERM_RANGE = None           # (min_term, max_term)
+ANNUAL_RATE = None          # ставка продукта, по ней везде считаем dti
+
+# тексты для клиента по коду reason, из 08_reasons.md. коды, которых в нём
+# пока нет, взяты из плана правок каталога; держать в синхроне с 08_reasons.md
+CLIENT_TEXTS = {
+    "AGE_OUT_OF_RANGE": "Возраст не соответствует условиям продукта",
+    "INVALID_EMPLOYMENT": "Продукт не доступен при текущем статусе занятости",
+    "LOW_INCOME": "Недостаточный доход для данного продукта",
+    "HIGH_DTI": "Слишком высокая долговая нагрузка",
+    "BKI_DELINQUENCY": "Есть просрочки в кредитной истории",
+    "AMOUNT_LIMIT": "Сумма кредита превышает допустимую для вашего дохода",
+    "SMEV_MISMATCH": "Данные не совпали при проверке, обратитесь в банк",
+    "LOW_SCORE": "Недостаточный балл для одобрения",
+    "MISSING_INCOME": "Укажите доход",
+    "EXTERNAL_TIMEOUT": "Не удалось проверить данные, попробуйте позже",
+    "MISSING_AGE": "Укажите корректный возраст",
+    "MISSING_EMPLOYMENT": "Укажите занятость",
+    "MISSING_FAMILY": "Укажите семейное положение",
+    "MISSING_AMOUNT": "Укажите сумму кредита",
+    "MISSING_TERM": "Укажите срок кредита",
+    "INVALID_FAMILY": "Проверьте семейное положение",
+    "AMOUNT_OUT_OF_RANGE": "Проверьте сумму кредита",
+    "TERM_OUT_OF_RANGE": "Проверьте срок кредита",
+    "INVALID_CLIENT_ID": "Не удалось проверить идентификатор клиента",
+    "INVALID_PASSPORT_HASH": "Не удалось проверить данные документа",
+}
 
 EMPLOYMENT = ("employed", "self-employed", "student", "retired", "unemployed")
 FAMILY = ("single", "married", "children")
 
 EXTERNAL_TIMEOUT_SEC = 3    # сколько ждём ответ внешнего сервиса
 RETRY_PAUSE_SEC = 0.5       # пауза перед единственным повтором
+
+
+def load_product(path=PRODUCTS_PATH, product_id=PRODUCT_ID):
+    """читает параметры продукта из products.csv и кладёт их в пороги выше.
+    если файла или продукта нет, падаем с понятной ошибкой"""
+    global MIN_AGE, MAX_AGE, MIN_INCOME, AMOUNT_RANGE, TERM_RANGE, ANNUAL_RATE
+    try:
+        with open(path, encoding="utf-8-sig", newline="") as f:
+            rows = list(csv.DictReader(f))
+    except OSError as e:
+        sys.exit("Ошибка: не удалось прочитать %s (%s)" % (path, e))
+    row = next((r for r in rows if r.get("product_id") == product_id), None)
+    if row is None:
+        sys.exit("Ошибка: продукт %s не найден в %s" % (product_id, path))
+    try:
+        MIN_AGE, MAX_AGE = int(row["min_age"]), int(row["max_age"])
+        MIN_INCOME = float(row["min_income"])
+        AMOUNT_RANGE = (float(row["min_amount"]), float(row["max_amount"]))
+        TERM_RANGE = (int(row["min_term"]), int(row["max_term"]))
+        ANNUAL_RATE = float(row["rate"])
+    except (KeyError, TypeError, ValueError) as e:
+        sys.exit("Ошибка: неверные параметры продукта %s в %s (%s)"
+                 % (product_id, path, e))
 
 
 # журналы: external.log и audit.log
@@ -67,17 +119,30 @@ class Journals:
     def __init__(self, directory):
         self.external_path = Path(directory) / "external.log"
         self.audit_path = Path(directory) / "audit.log"
-        self.req_no = 0
-        self.evt_no = 0
+        # продолжаем нумерацию с последнего id в логах, чтобы между
+        # запусками не было повторов
+        self.req_no = self._last_no(self.external_path, "request_id", "req")
+        self.evt_no = self._last_no(self.audit_path, "event_id", "evt")
+
+    @staticmethod
+    def _last_no(path, key, prefix):
+        """последний номер id в логе, 0 если файла нет или он пустой"""
+        try:
+            text = Path(path).read_text(encoding="utf-8")
+        except OSError:
+            return 0
+        found = re.findall(r'"%s":\s*"%s_(\d+)"' % (key, prefix), text)
+        return max(map(int, found)) if found else 0
 
     @staticmethod
     def _now():
         return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
-    def external(self, service, status, latency_ms, result):
+    def external(self, app_id, service, status, latency_ms, result):
         self.req_no += 1
         line = {"timestamp": self._now(), "service": service,
-                "request_id": "req_%04d" % self.req_no, "status": status,
+                "request_id": "req_%04d" % self.req_no, "app_id": app_id,
+                "status": status,
                 "latency_ms": latency_ms, "result": result}
         with open(self.external_path, "a", encoding="utf-8") as f:
             f.write(json.dumps(line, ensure_ascii=False) + "\n")
@@ -115,15 +180,16 @@ def smev_emulator(client_id):
     return "MISMATCH" if _h10(client_id) == 0 else "MATCH"
 
 
-def call_external(service, key, emulator, journals, timeout_clients, client_id):
+def call_external(app_id, service, key, emulator, journals, timeout_clients,
+                  client_id):
     """вызов сервиса с одним повтором. возвращает ответ эмулятора или None,
     если не ответил. таймаут включаем только для клиентов из --timeout-clients"""
     for attempt in (1, 2):
         started = time.perf_counter()
         if client_id in timeout_clients:
             # по-настоящему ждать 3 секунды не нужно, просто пишем в лог
-            journals.external(service, "TIMEOUT", EXTERNAL_TIMEOUT_SEC * 1000,
-                              {"attempt": attempt})
+            journals.external(app_id, service, "TIMEOUT",
+                              EXTERNAL_TIMEOUT_SEC * 1000, {"attempt": attempt})
             if attempt == 1:
                 time.sleep(RETRY_PAUSE_SEC)
             continue
@@ -133,7 +199,7 @@ def call_external(service, key, emulator, journals, timeout_clients, client_id):
             shown = {"score": result[0], "delinquency": result[1]}
         else:
             shown = {"status": result}
-        journals.external(service, "SUCCESS", latency, shown)
+        journals.external(app_id, service, "SUCCESS", latency, shown)
         return result
     return None
 
@@ -152,7 +218,7 @@ def validate(app):
     вид MISSING: поле пустое, reason будет MISSING_<ПОЛЕ>.
     вид INVALID: значение неверное, reason берём из data_dictionary.md.
     в обоих случаях решение NEED_MORE_DATA, клиент должен поправить заявку.
-    возраст вне 18-70 здесь не проверяем, это правило отказа №1 в decide().
+    возраст вне 18-70 здесь не проверяем, это правило отказа N1 в decide().
     порядок важен: у app_0004 пустые и age, и income, а нужен MISSING_INCOME,
     поэтому доход проверяем первым"""
     for field in ("income", "age", "employment", "family", "amount", "term"):
@@ -248,8 +314,10 @@ def decide(app, score_total, dti, bki_score, delinquency, smev):
 
 
 def _result(app_id, decision, reason, score_total="", dti=""):
+    # у APPROVED reason пустой, текст для клиента тоже
     return {"app_id": app_id, "decision": decision, "reason": reason,
-            "score": score_total, "dti": dti}
+            "score": score_total, "dti": dti,
+            "client_text": CLIENT_TEXTS.get(reason, "")}
 
 
 def process(app, journals, timeout_clients, use_csv=False):
@@ -266,6 +334,9 @@ def process(app, journals, timeout_clients, use_csv=False):
     if use_csv:
         # режим для сверки: берём ответы из csv, никуда не обращаемся
         smev = app.get("smev_status") or smev_emulator(app["client_id"])
+        if smev == "TIMEOUT":
+            journals.audit(app_id, "decision_made", "NEED_MORE_DATA", "EXTERNAL_TIMEOUT")
+            return _result(app_id, "NEED_MORE_DATA", "EXTERNAL_TIMEOUT")
         csv_bki = _to_number(app.get("bki_score"), int)
         if csv_bki is None:
             bki_score, delinquency = bki_emulator(app["passport_hash"])
@@ -273,14 +344,14 @@ def process(app, journals, timeout_clients, use_csv=False):
             bki_score, delinquency = csv_bki, csv_bki < BKI_MIN_SCORE
     else:
         # шаг 2: СМЭВ
-        smev = call_external("SMEV", app["client_id"], smev_emulator, journals,
+        smev = call_external(app_id, "SMEV", app["client_id"], smev_emulator, journals,
                              timeout_clients, app["client_id"])
         if smev is None:
             journals.audit(app_id, "decision_made", "NEED_MORE_DATA", "EXTERNAL_TIMEOUT")
             return _result(app_id, "NEED_MORE_DATA", "EXTERNAL_TIMEOUT")
 
         # шаг 3: БКИ
-        bki = call_external("BKI", app["passport_hash"], bki_emulator, journals,
+        bki = call_external(app_id, "BKI", app["passport_hash"], bki_emulator, journals,
                             timeout_clients, app["client_id"])
         if bki is None:
             journals.audit(app_id, "decision_made", "NEED_MORE_DATA", "EXTERNAL_TIMEOUT")
@@ -313,6 +384,8 @@ def main():
         timeout_clients = set(sys.argv[sys.argv.index("--timeout-clients") + 1].split(","))
     show_diff = "--show-diff" in sys.argv
     use_csv = "--use-csv-external" in sys.argv
+
+    load_product()
 
     # utf-8-sig, чтобы не спотыкаться о BOM, если файл сохраняли из excel
     with open(src, encoding="utf-8-sig", newline="") as f:
