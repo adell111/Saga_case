@@ -4,11 +4,11 @@
 CLI-прототип кредитного конвейера — кейс 2.
 
 Использование:
-    python 04_прототип.py applications.csv
-    python 04_прототип.py applications.csv --out decisions.csv
-    python 04_прототип.py applications.csv --timeout-clients cli_0003,cli_0010
-    python 04_прототип.py applications.csv --show-diff
-    python 04_прототип.py applications.csv --use-csv-external
+    python 04_прототип.py Данные\applications.csv
+    python 04_прототип.py Данные\applications.csv --out decisions.csv
+    python 04_прототип.py Данные\applications.csv --timeout-clients cli_0003,cli_0010
+    python 04_прототип.py Данные\applications.csv --show-diff
+    python 04_прототип.py Данные\applications.csv --use-csv-external
 
 --use-csv-external берёт ответы БКИ и СМЭВ из колонок bki_score и smev_status
 самого csv (если там пусто, то из эмулятора). Нужно для сверки и для тестов,
