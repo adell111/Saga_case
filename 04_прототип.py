@@ -56,8 +56,7 @@ AMOUNT_RANGE = None         # (min_amount, max_amount)
 TERM_RANGE = None           # (min_term, max_term)
 ANNUAL_RATE = None          # ставка продукта, по ней везде считаем dti
 
-# тексты для клиента по коду reason, из 08_reasons.md. коды, которых в нём
-# пока нет, взяты из плана правок каталога; держать в синхроне с 08_reasons.md
+# текстики для клиента по коду reason ровно из 08_reasons.md
 CLIENT_TEXTS = {
     "AGE_OUT_OF_RANGE": "Возраст не соответствует условиям продукта",
     "INVALID_EMPLOYMENT": "Продукт не доступен при текущем статусе занятости",
@@ -69,16 +68,6 @@ CLIENT_TEXTS = {
     "LOW_SCORE": "Недостаточный балл для одобрения",
     "MISSING_INCOME": "Укажите доход",
     "EXTERNAL_TIMEOUT": "Не удалось проверить данные, попробуйте позже",
-    "MISSING_AGE": "Укажите корректный возраст",
-    "MISSING_EMPLOYMENT": "Укажите занятость",
-    "MISSING_FAMILY": "Укажите семейное положение",
-    "MISSING_AMOUNT": "Укажите сумму кредита",
-    "MISSING_TERM": "Укажите срок кредита",
-    "INVALID_FAMILY": "Проверьте семейное положение",
-    "AMOUNT_OUT_OF_RANGE": "Проверьте сумму кредита",
-    "TERM_OUT_OF_RANGE": "Проверьте срок кредита",
-    "INVALID_CLIENT_ID": "Не удалось проверить идентификатор клиента",
-    "INVALID_PASSPORT_HASH": "Не удалось проверить данные документа",
 }
 
 EMPLOYMENT = ("employed", "self-employed", "student", "retired", "unemployed")
