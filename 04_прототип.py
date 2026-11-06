@@ -357,22 +357,55 @@ def process(app, journals, timeout_clients, use_csv=False):
     return _result(app_id, decision, reason, score_total, dti_out)
 
 
-def main():
-    if len(sys.argv) < 2:
-        print("Использование: python 04_прототип.py applications.csv "
-              "[--out decisions.csv] [--timeout-clients cli_0001,cli_0002] "
-              "[--show-diff] [--use-csv-external]")
-        sys.exit(1)
+BANNER = r"""
+$$$$$$\   $$$$$$\   $$$$$$\   $$$$$$\
+$$  __$$\ $$  __$$\ $$  __$$\ $$  __$$\
+$$ /  \__|$$ /  $$ |$$ /  \__|$$ /  $$ |
+\$$$$$$\  $$$$$$$$ |$$ |$$$$\ $$$$$$$$ |
+ \____$$\ $$  __$$ |$$ |\_$$ |$$  __$$ |
+$$\   $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |
+\$$$$$$  |$$ |  $$ |\$$$$$$  |$$ |  $$ |
+ \______/ \__|  \__| \______/ \__|  \__|
+"""
 
-    src = sys.argv[1]
-    out = "decisions.csv"
-    if "--out" in sys.argv:
-        out = sys.argv[sys.argv.index("--out") + 1]
-    timeout_clients = set()
-    if "--timeout-clients" in sys.argv:
-        timeout_clients = set(sys.argv[sys.argv.index("--timeout-clients") + 1].split(","))
-    show_diff = "--show-diff" in sys.argv
-    use_csv = "--use-csv-external" in sys.argv
+
+def _ask(text, default):
+    """спрашивает значение, пустой ввод оставляет значение по умолчанию"""
+    try:
+        value = input("%s [%s]: " % (text, default)).strip()
+    except EOFError:
+        value = ""
+    return value or default
+
+
+def interactive():
+    """диалог запуска, если программу вызвали без аргументов"""
+    print("Кредитный конвейер")
+    src = _ask("Путь к заявкам", "Данные/applications.csv")
+    print("Режим: 1 - обычный (эмуляторы), 2 - сверка с разметкой CSV")
+    mode = _ask("Режим", "1")
+    while mode not in ("1", "2"):
+        print("Введите 1 или 2")
+        mode = _ask("Режим", "1")
+    out = _ask("Куда писать результат", "decisions.csv")
+    show_diff = _ask("Показать расхождения с CSV (y/n)", "n").lower() == "y"
+    return src, out, set(), show_diff, mode == "2"
+
+
+def main():
+    print(f"{'#'*50}\n" + "\n".join(ln.center(50) for ln in BANNER.strip().split("\n")) + f"\n{'#'*50}\n")
+    if len(sys.argv) < 2:
+        src, out, timeout_clients, show_diff, use_csv = interactive()
+    else:
+        src = sys.argv[1]
+        out = "decisions.csv"
+        if "--out" in sys.argv:
+            out = sys.argv[sys.argv.index("--out") + 1]
+        timeout_clients = set()
+        if "--timeout-clients" in sys.argv:
+            timeout_clients = set(sys.argv[sys.argv.index("--timeout-clients") + 1].split(","))
+        show_diff = "--show-diff" in sys.argv
+        use_csv = "--use-csv-external" in sys.argv
 
     load_product()
 
