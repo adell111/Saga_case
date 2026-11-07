@@ -248,13 +248,17 @@ class Journals:
             "status": status, "latency_ms": latency_ms, "result": result})
 
     def audit(self, app_id, step, decision="", reason="", score="", dti="",
-              external=None):
-        """external - список вызовов вида {"service": "SMEV", "status": "MATCH"},
-        пустой, если во внешние сервисы не ходили"""
+              external=None, client_id=""):
+        """поля как в ИБ.md, раздел 4. client_id это псевдоним клиента, он нужен,
+        чтобы видеть повторные заявки. external - след вызовов БКИ и СМЭВ вида
+        {"service": "SMEV", "status": "SUCCESS", "result": "MATCH"}, пустой
+        список, если во внешние сервисы не ходили. decision пустой только у
+        application_created, score и dti пустые, пока скоринг не считали"""
         self.evt_no += 1
         self._append(self.audit_path, {
-            "event_id": "evt_%04d" % self.evt_no, "app_id": app_id, "step": step,
-            "decision": decision, "reason": reason, "score": score, "dti": dti,
+            "event_id": "evt_%04d" % self.evt_no, "app_id": app_id,
+            "client_id": client_id, "step": step, "decision": decision,
+            "reason": reason, "score": score, "dti": dti,
             "external": external or [], "actor": "system", "at": self._now()})
 
 
@@ -305,6 +309,12 @@ def call_external(run, app, service, key, emulator):
     return None
 
 
+def _trace(service, status, result=""):
+    """запись о вызове для audit.log: service BKI или SMEV, status SUCCESS,
+    TIMEOUT или ERROR (а не MATCH и MISMATCH), result это краткий ответ без ПДн"""
+    return {"service": service, "status": status, "result": result}
+
+
 def fetch_external(run, app, row):
     """шаги 2 и 3: СМЭВ и БКИ. в режиме CSV ответы берём из колонок файла и
     никуда не обращаемся, пустое или мусорное значение заменяет эмулятор"""
@@ -324,18 +334,19 @@ def fetch_external(run, app, row):
     ext = External()
     smev = call_external(run, app, "SMEV", app.client_id, smev_emulator)
     if smev is None:
-        ext.calls.append({"service": "SMEV", "status": "TIMEOUT"})
+        ext.calls.append(_trace("SMEV", "TIMEOUT"))
         ext.timed_out = True
         return ext
     ext.smev = smev
-    ext.calls.append({"service": "SMEV", "status": smev})
+    ext.calls.append(_trace("SMEV", "SUCCESS", smev))
     bki = call_external(run, app, "BKI", app.passport_hash, bki_emulator)
     if bki is None:
-        ext.calls.append({"service": "BKI", "status": "TIMEOUT"})
+        ext.calls.append(_trace("BKI", "TIMEOUT"))
         ext.timed_out = True
         return ext
     ext.bki_score, ext.delinquency = bki
-    ext.calls.append({"service": "BKI", "status": "SUCCESS"})
+    ext.calls.append(_trace("BKI", "SUCCESS", "score=%d, delinquency=%s" % (
+        ext.bki_score, "true" if ext.delinquency else "false")))
     return ext
 
 
@@ -485,18 +496,22 @@ def process(raw, run):
     row = normalize(raw)
     app_id = row.get("app_id") or "app_unknown"
     journals = run.journals
-    journals.audit(app_id, "application_created")
+    client_id = row.get("client_id", "")
+    if not CLIENT_RE.fullmatch(client_id):
+        client_id = ""      # мусор вместо псевдонима в журнал не пишем
+    journals.audit(app_id, "application_created", client_id=client_id)
 
     # сначала валидация, чтобы не ходить во внешние сервисы с мусором
     app, reason = validate(row)
     if reason:
-        journals.audit(app_id, "validation_failed", "NEED_MORE_DATA", reason)
+        journals.audit(app_id, "validation_failed", "NEED_MORE_DATA", reason,
+                       client_id=client_id)
         return _result(app_id, "NEED_MORE_DATA", reason)
 
     ext = fetch_external(run, app, row)
     if ext.timed_out:
         journals.audit(app_id, "decision_made", "NEED_MORE_DATA", "EXTERNAL_TIMEOUT",
-                       external=ext.calls)
+                       external=ext.calls, client_id=client_id)
         return _result(app_id, "NEED_MORE_DATA", "EXTERNAL_TIMEOUT")
 
     score_total = score(app, ext.bki_score, ext.delinquency)
@@ -505,7 +520,7 @@ def process(raw, run):
 
     dti_out = round(dti, 2)
     journals.audit(app_id, "decision_made", decision, reason, score_total, dti_out,
-                   external=ext.calls)
+                   external=ext.calls, client_id=client_id)
     approved = None
     if decision == "APPROVED":
         approved = {"amount_approved": _num(app.amount), "term_approved": app.term,
