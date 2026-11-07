@@ -1,9 +1,13 @@
-# JSON-схемы API кредитного конвейера — кейс 2
+# JSON-схемы API кредитного конвейера, кейс 2
 #
-# Как заполнять:
-#   1. Не меняй schemas Application (образец).
-#   2. Заполни Decision, ExternalRequest, Error.
-#   3. Проверь: файл должен валидироваться на https://www.jsonschemavalidator.net/
+# Проект API. HTTP-сервер не реализован, прототип работает как консольная
+# программа (04_прототип.py). Схема Application (образец) не менялась.
+#
+# Про образец Application: age 18-70 и amount до 5 000 000 это общий контракт.
+# Прототип не отбрасывает заявку с возрастом вне 18-70, а отвечает REFUSED с
+# причиной AGE_OUT_OF_RANGE (правило 1). Лимиты продукта prod_standard
+# (сумма до 1 000 000) дают REFUSED / AMOUNT_LIMIT.
+# Для NEED_MORE_DATA score и dti пустые: заявка не дошла до скоринга.
 
 openapi: 3.0.3
 info:
@@ -34,29 +38,125 @@ components:
         amount: {type: number, minimum: 10000, maximum: 5000000}
         term: {type: integer, minimum: 3, maximum: 60}
 
-# ---------- TODO: заполни эти схемы ----------
+# ---------- ответы конвейера ----------
     Decision:
       type: object
-      required: [app_id, decision, reason, score, dti]
+      description: Решение по заявке. Поля amount_approved, term_approved и rate заполняются только для APPROVED
+      required: [app_id, decision, reason]
       properties:
-        # TODO: app_id, decision (enum APPROVED/REFUSED/NEED_MORE_DATA/MANUAL_REVIEW),
-        #       reason (string), score (0-100), dti (>= 0),
-        #       amount_approved, term_approved, rate,
-        #       bki ({score, delinquency}), smev (enum)
-        ?
+        app_id:
+          type: string
+          pattern: '^app_[0-9]{4}$'
+        decision:
+          type: string
+          description: MANUAL_REVIEW возможное расширение, в прототипе не реализовано
+          enum: [APPROVED, REFUSED, NEED_MORE_DATA, MANUAL_REVIEW]
+        reason:
+          type: string
+          description: Код причины из 08_reasons.md, для APPROVED пустая строка
+          enum:
+            - AGE_OUT_OF_RANGE
+            - INVALID_EMPLOYMENT
+            - MISSING_INCOME
+            - LOW_INCOME
+            - HIGH_DTI
+            - BKI_DELINQUENCY
+            - AMOUNT_LIMIT
+            - SMEV_MISMATCH
+            - LOW_SCORE
+            - EXTERNAL_TIMEOUT
+            - MISSING_AGE
+            - INVALID_FAMILY
+            - AMOUNT_OUT_OF_RANGE
+            - TERM_OUT_OF_RANGE
+            - INVALID_CLIENT_ID
+            - INVALID_PASSPORT_HASH
+            - ''
+        client_text:
+          type: string
+          description: Понятный клиенту текст, для APPROVED пустая строка
+        score:
+          type: integer
+          nullable: true
+          minimum: 0
+          maximum: 100
+          description: Балл скоринга. Пусто, если заявка остановлена до скоринга (NEED_MORE_DATA)
+        dti:
+          type: number
+          nullable: true
+          minimum: 0
+          description: Платёж по аннуитету делить на доход, порог 0.5. Пусто при NEED_MORE_DATA
+        amount_approved:
+          type: number
+          nullable: true
+          minimum: 10000
+        term_approved:
+          type: integer
+          nullable: true
+          minimum: 3
+          maximum: 60
+        rate:
+          type: number
+          nullable: true
+          minimum: 0
+          maximum: 1
+        bki:
+          type: object
+          properties:
+            score: {type: integer, minimum: 300, maximum: 850}
+            delinquency: {type: boolean}
+            inquiries_90d: {type: integer, minimum: 0}
+        smev:
+          type: string
+          enum: [MATCH, MISMATCH, TIMEOUT, NOT_CALLED]
 
     ExternalRequest:
       type: object
+      required: [request_id, app_id, service, status, latency_ms]
       properties:
-        # TODO: request_id, service (BKI|SMEV), status, latency_ms, result
-        ?
+        request_id:
+          type: string
+          pattern: '^req_[0-9]{4,}$'
+        app_id:
+          type: string
+          pattern: '^app_[0-9]{4}$'
+        service:
+          type: string
+          enum: [BKI, SMEV]
+        status:
+          type: string
+          enum: [SUCCESS, TIMEOUT, ERROR]
+        latency_ms:
+          type: integer
+          minimum: 0
+        result:
+          type: object
+          additionalProperties: true
+          description: Краткий ответ сервиса, без персональных данных
+        at:
+          type: string
+          format: date-time
 
     Error:
       type: object
       required: [error_code, message]
       properties:
-        # TODO: error_code, message, retryable, details
-        ?
+        error_code:
+          type: string
+          example: VALIDATION_ERROR
+        message:
+          type: string
+          example: 'Поле age должно быть от 18 до 70'
+        field:
+          type: string
+          nullable: true
+          description: Имя поля заявки, если ошибка относится к одному полю
+        retryable:
+          type: boolean
+          description: true, если запрос можно безопасно повторить
+        details:
+          type: object
+          additionalProperties: true
 
 # ---------- paths ----------
 paths:
@@ -71,23 +171,94 @@ paths:
             application/json:
               schema: {type: object, properties: {status: {type: string}}}
 
-  # ---------- TODO: подача заявки ----------
+  # ---------- подача заявки ----------
   /api/v1/applications:
     post:
-      summary: TODO
-      # TODO: requestBody Application, responses 201/422/409
-      ?
+      summary: Принять заявку и вернуть предварительное решение
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Application'
+      responses:
+        '201':
+          description: Заявка принята, решение рассчитано
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Decision'
+        '422':
+          description: Ошибка валидации полей заявки
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Заявка с таким app_id уже существует
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
 
-  # ---------- TODO: решение по заявке ----------
+  # ---------- решение по заявке ----------
   /api/v1/applications/{id}/decision:
     get:
-      summary: TODO
-      # TODO: responses 200 (Decision), 404, 425 (ещё считается)
-      ?
+      summary: Получить решение по заявке
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: '^app_[0-9]{4}$'
+      responses:
+        '200':
+          description: Решение найдено
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Decision'
+        '404':
+          description: Заявка не найдена
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '425':
+          description: Решение ещё рассчитывается
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
 
-  # ---------- TODO: пересчёт (опционально) ----------
+  # ---------- пересчёт (опционально) ----------
   /api/v1/applications/{id}/recalculate:
     post:
-      summary: TODO
-      # TODO: responses 200, 409
-      ?
+      summary: Пересчитать решение по заявке (опционально, в прототипе не реализовано)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: '^app_[0-9]{4}$'
+      responses:
+        '200':
+          description: Новое решение
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Decision'
+        '404':
+          description: Заявка не найдена
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Пересчёт невозможен, например заявка уже выдана
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'

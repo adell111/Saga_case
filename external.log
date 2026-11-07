@@ -1,198 +1,198 @@
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0001", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0002", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0003", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0004", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 550, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0005", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0006", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 500, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0007", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0008", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 600, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0009", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0010", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0011", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0012", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 660, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0013", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0014", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0015", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0016", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0017", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0018", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 450, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0019", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0020", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0021", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0022", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 700, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0023", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0024", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 660, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0025", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0026", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0027", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0028", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 640, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0029", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0030", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0031", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0032", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 700, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0033", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0034", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 550, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0035", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0036", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 500, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0037", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0038", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0039", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0040", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0041", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0042", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 600, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0043", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0044", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 640, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0045", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0046", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0047", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0048", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 640, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0049", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0050", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 600, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0051", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0052", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 450, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0053", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0054", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 450, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0055", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0056", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 620, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0057", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0058", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 660, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0059", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0060", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 600, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0061", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0062", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0063", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0064", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0065", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0066", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0067", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0068", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 550, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0069", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0070", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0071", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0072", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0073", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0074", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0075", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0076", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 620, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0077", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0078", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 500, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0079", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0080", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 450, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0081", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0082", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 640, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0083", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0084", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0085", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0086", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0087", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0088", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 620, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0089", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0090", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 550, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0091", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0092", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0093", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0094", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 660, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0095", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0096", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0097", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0098", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 450, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0099", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0100", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0101", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0102", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 640, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0103", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0104", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 450, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0105", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0106", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 640, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0107", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0108", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 620, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0109", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0110", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 660, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0111", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0112", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 450, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0113", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0114", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 600, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0115", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0116", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 620, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0117", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0118", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 660, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0119", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0120", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 500, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0121", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0122", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 500, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0123", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0124", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0125", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0126", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 640, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0127", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0128", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0129", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0130", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 600, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0131", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0132", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 660, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0133", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0134", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 620, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0135", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0136", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 620, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0137", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0138", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 450, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0139", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0140", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 640, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0141", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0142", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0143", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0144", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 700, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0145", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0146", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 600, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0147", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0148", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 500, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0149", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0150", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 500, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0151", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0152", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 550, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0153", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0154", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0155", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0156", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 600, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0157", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0158", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 600, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0159", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0160", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 550, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0161", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0162", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 600, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0163", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0164", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 550, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0165", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0166", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0167", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0168", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 660, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0169", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0170", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 500, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0171", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0172", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0173", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0174", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 660, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0175", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0176", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 660, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0177", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0178", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0179", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0180", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0181", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0182", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 500, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0183", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0184", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0185", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0186", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 620, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0187", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0188", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 600, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0189", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0190", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 700, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0191", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0192", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 620, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0193", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0194", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 640, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0195", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0196", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 450, "delinquency": false}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "SMEV", "request_id": "req_0197", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
-{"timestamp": "2026-11-06T13:41:14Z", "service": "BKI", "request_id": "req_0198", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0001", "app_id": "app_0001", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0002", "app_id": "app_0001", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0003", "app_id": "app_0002", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0004", "app_id": "app_0002", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 550, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0005", "app_id": "app_0003", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0006", "app_id": "app_0003", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 500, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0007", "app_id": "app_0005", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0008", "app_id": "app_0005", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 600, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0009", "app_id": "app_0006", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0010", "app_id": "app_0006", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0011", "app_id": "app_0007", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0012", "app_id": "app_0007", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 660, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0013", "app_id": "app_0008", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0014", "app_id": "app_0008", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0015", "app_id": "app_0009", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0016", "app_id": "app_0009", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0017", "app_id": "app_0010", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0018", "app_id": "app_0010", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 450, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0019", "app_id": "app_0011", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0020", "app_id": "app_0011", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0021", "app_id": "app_0012", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0022", "app_id": "app_0012", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 700, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0023", "app_id": "app_0013", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0024", "app_id": "app_0013", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 660, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0025", "app_id": "app_0014", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0026", "app_id": "app_0014", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0027", "app_id": "app_0015", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0028", "app_id": "app_0015", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 640, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0029", "app_id": "app_0016", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0030", "app_id": "app_0016", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0031", "app_id": "app_0017", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0032", "app_id": "app_0017", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 700, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0033", "app_id": "app_0018", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0034", "app_id": "app_0018", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 550, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0035", "app_id": "app_0019", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0036", "app_id": "app_0019", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 500, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0037", "app_id": "app_0020", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0038", "app_id": "app_0020", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0039", "app_id": "app_0021", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0040", "app_id": "app_0021", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0041", "app_id": "app_0022", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0042", "app_id": "app_0022", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 600, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0043", "app_id": "app_0023", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0044", "app_id": "app_0023", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 640, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0045", "app_id": "app_0024", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0046", "app_id": "app_0024", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0047", "app_id": "app_0025", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0048", "app_id": "app_0025", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 640, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0049", "app_id": "app_0026", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0050", "app_id": "app_0026", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 600, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0051", "app_id": "app_0027", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0052", "app_id": "app_0027", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 450, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0053", "app_id": "app_0028", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0054", "app_id": "app_0028", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 450, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0055", "app_id": "app_0029", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0056", "app_id": "app_0029", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 620, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0057", "app_id": "app_0030", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0058", "app_id": "app_0030", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 660, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0059", "app_id": "app_0031", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0060", "app_id": "app_0031", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 600, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0061", "app_id": "app_0032", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0062", "app_id": "app_0032", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0063", "app_id": "app_0033", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0064", "app_id": "app_0033", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0065", "app_id": "app_0034", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0066", "app_id": "app_0034", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0067", "app_id": "app_0035", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0068", "app_id": "app_0035", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 550, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0069", "app_id": "app_0036", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0070", "app_id": "app_0036", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0071", "app_id": "app_0037", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0072", "app_id": "app_0037", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0073", "app_id": "app_0038", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0074", "app_id": "app_0038", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0075", "app_id": "app_0039", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0076", "app_id": "app_0039", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 620, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0077", "app_id": "app_0040", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0078", "app_id": "app_0040", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 500, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0079", "app_id": "app_0041", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0080", "app_id": "app_0041", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 450, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0081", "app_id": "app_0042", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0082", "app_id": "app_0042", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 640, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0083", "app_id": "app_0043", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0084", "app_id": "app_0043", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0085", "app_id": "app_0044", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0086", "app_id": "app_0044", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0087", "app_id": "app_0045", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0088", "app_id": "app_0045", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 620, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0089", "app_id": "app_0046", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0090", "app_id": "app_0046", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 550, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0091", "app_id": "app_0047", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0092", "app_id": "app_0047", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0093", "app_id": "app_0048", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0094", "app_id": "app_0048", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 660, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0095", "app_id": "app_0049", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0096", "app_id": "app_0049", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0097", "app_id": "app_0050", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0098", "app_id": "app_0050", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 450, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0099", "app_id": "app_0051", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0100", "app_id": "app_0051", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0101", "app_id": "app_0052", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0102", "app_id": "app_0052", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 640, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0103", "app_id": "app_0053", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0104", "app_id": "app_0053", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 450, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0105", "app_id": "app_0054", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0106", "app_id": "app_0054", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 640, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0107", "app_id": "app_0055", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0108", "app_id": "app_0055", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 620, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0109", "app_id": "app_0056", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0110", "app_id": "app_0056", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 660, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0111", "app_id": "app_0057", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0112", "app_id": "app_0057", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 450, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0113", "app_id": "app_0058", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0114", "app_id": "app_0058", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 600, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0115", "app_id": "app_0059", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0116", "app_id": "app_0059", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 620, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0117", "app_id": "app_0060", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0118", "app_id": "app_0060", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 660, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0119", "app_id": "app_0061", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0120", "app_id": "app_0061", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 500, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0121", "app_id": "app_0062", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0122", "app_id": "app_0062", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 500, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0123", "app_id": "app_0063", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0124", "app_id": "app_0063", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0125", "app_id": "app_0064", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0126", "app_id": "app_0064", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 640, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0127", "app_id": "app_0065", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0128", "app_id": "app_0065", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0129", "app_id": "app_0066", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0130", "app_id": "app_0066", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 600, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0131", "app_id": "app_0067", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0132", "app_id": "app_0067", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 660, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0133", "app_id": "app_0068", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0134", "app_id": "app_0068", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 620, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0135", "app_id": "app_0069", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0136", "app_id": "app_0069", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 620, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0137", "app_id": "app_0070", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0138", "app_id": "app_0070", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 450, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0139", "app_id": "app_0071", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0140", "app_id": "app_0071", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 640, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0141", "app_id": "app_0072", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0142", "app_id": "app_0072", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0143", "app_id": "app_0073", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0144", "app_id": "app_0073", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 700, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0145", "app_id": "app_0074", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0146", "app_id": "app_0074", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 600, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0147", "app_id": "app_0075", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0148", "app_id": "app_0075", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 500, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0149", "app_id": "app_0076", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0150", "app_id": "app_0076", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 500, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0151", "app_id": "app_0077", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0152", "app_id": "app_0077", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 550, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0153", "app_id": "app_0078", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0154", "app_id": "app_0078", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0155", "app_id": "app_0079", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0156", "app_id": "app_0079", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 600, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0157", "app_id": "app_0080", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0158", "app_id": "app_0080", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 600, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0159", "app_id": "app_0081", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0160", "app_id": "app_0081", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 550, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0161", "app_id": "app_0082", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0162", "app_id": "app_0082", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 600, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0163", "app_id": "app_0083", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0164", "app_id": "app_0083", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 550, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0165", "app_id": "app_0084", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0166", "app_id": "app_0084", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0167", "app_id": "app_0085", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MISMATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0168", "app_id": "app_0085", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 660, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0169", "app_id": "app_0086", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0170", "app_id": "app_0086", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 500, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0171", "app_id": "app_0087", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0172", "app_id": "app_0087", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0173", "app_id": "app_0088", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0174", "app_id": "app_0088", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 660, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0175", "app_id": "app_0089", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0176", "app_id": "app_0089", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 660, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0177", "app_id": "app_0090", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0178", "app_id": "app_0090", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0179", "app_id": "app_0091", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0180", "app_id": "app_0091", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0181", "app_id": "app_0092", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0182", "app_id": "app_0092", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 500, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0183", "app_id": "app_0093", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0184", "app_id": "app_0093", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 680, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0185", "app_id": "app_0094", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0186", "app_id": "app_0094", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 620, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0187", "app_id": "app_0095", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0188", "app_id": "app_0095", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 600, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0189", "app_id": "app_0096", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0190", "app_id": "app_0096", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 700, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0191", "app_id": "app_0097", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0192", "app_id": "app_0097", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 620, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0193", "app_id": "app_0098", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0194", "app_id": "app_0098", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 640, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0195", "app_id": "app_0099", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0196", "app_id": "app_0099", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 450, "delinquency": false, "inquiries_90d": 1}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "SMEV", "request_id": "req_0197", "app_id": "app_0100", "status": "SUCCESS", "latency_ms": 0, "result": {"status": "MATCH"}}
+{"timestamp": "2026-11-07T14:52:43Z", "service": "BKI", "request_id": "req_0198", "app_id": "app_0100", "status": "SUCCESS", "latency_ms": 0, "result": {"score": 400, "delinquency": true, "inquiries_90d": 1}}
