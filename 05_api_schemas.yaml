@@ -133,9 +133,10 @@ components:
           type: object
           additionalProperties: true
           description: Краткий ответ сервиса, без персональных данных
-        at:
+        timestamp:
           type: string
           format: date-time
+          description: Время вызова, как в поле timestamp файла external.log
 
     Error:
       type: object
