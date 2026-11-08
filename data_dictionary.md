@@ -19,21 +19,21 @@
 
 ## Ваша таблица — 13 оставшихся колонок
 
-| Поле | Тип | Обяз. | Ограничение | Пример | Код ошибки | Комментарий |
-|---|---|---|---|---|---|---|
-| age | integer | да | 18–70 | 32 | AGE_OUT_OF_RANGE (решение); MISSING_AGE* (422) | Возрастной ценз продукта |
-| income | number | да | > 0, ₽/мес; порог отказа < 30 000 | 120000 | MISSING_INCOME; LOW_INCOME; INVALID_INCOME* (422) | Основа для скоринга, DTI и лимита 10 × доход |
-| employment | enum | да | employed / self-employed / student / retired / unemployed | employed | INVALID_EMPLOYMENT | Стабильность дохода. unemployed = немедленный отказ |
-| family | enum | да | single / married / children | married | INVALID_FAMILY* (422) | Финансовая нагрузка домохозяйства |
-| amount | number | да | 10 000 – 5 000 000 ₽; доп. лимит: amount ≤ 10 × income | 500000 | AMOUNT_LIMIT (решение); AMOUNT_OUT_OF_RANGE* (422) | Тело кредита. Проверяется дважды |
-| term | integer | да | 3–60 мес. | 24 | TERM_OUT_OF_RANGE* (422) | Срок кредита → множитель аннуитета |
-| decision | enum | да (сервер) | APPROVED / REFUSED / NEED_MORE_DATA / MANUAL_REVIEW | APPROVED | — | Итог конвейера. Вычисляется, пользователем не изменяется. `MANUAL_REVIEW` зарезервирован |
-| reason | enum | условно | "" при APPROVED, иначе ровно 1 код из `08_reasons.md` | AMOUNT_LIMIT | — | Объяснение решения. У каждого не-APPROVED есть причина |
-| client_id | string | да | `^cli_[0-9]{4}$` | cli_0001 | INVALID_CLIENT_ID* (422) | Внешний ключ на клиента; вход для эмулятора СМЭВ |
-| passport_hash | string | да | `^[a-f0-9]{16}$`; SHA-256, усечённый до 16 hex; оригинал не хранится | f727a849055f2224 | INVALID_PASSPORT_HASH* (422) | Вход для эмулятора БКИ. Оригинал не хранится, хеш необратим; для продакшена — HMAC-SHA256 с секретом |
-| dti | number | да (сервер) | ≥ 0, 2 знака после точки; порог 0.5 | 0.12 | — | `dti = аннуитетный платёж / доход`. При `> 0.5` → `HIGH_DTI`. Пусто, если расчёт не выполнялся |
-| bki_score | integer | нет | 300 ≤ score ≤ 850; **< 500 = отказ** | 720 | — | Результат БКИ. Пусто, если БКИ не вызывалось. `delinquency=true` → отказ независимо от балла |
-| smev_status | enum | да (сервер) | MATCH / MISMATCH / TIMEOUT / NOT_CALLED | MATCH | EXTERNAL_TIMEOUT | Верификация личности по паспорту |
+| Поле          | Тип     | Обяз.       | Ограничение                                                          | Пример           | Код ошибки                                         | Комментарий                                                                                          |
+| ------------- | ------- | ----------- | -------------------------------------------------------------------- | ---------------- | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| age           | integer | да          | 18–70                                                                | 32               | AGE_OUT_OF_RANGE (решение);                        | Возрастной ценз продукта                                                                             |
+| income        | number  | да          | > 0, ₽/мес; порог отказа < 30 000                                    | 120000           | MISSING_INCOME; LOW_INCOME;                        | Основа для скоринга, DTI и лимита 10 × доход                                                         |
+| employment    | enum    | да          | employed / self-employed / student / retired / unemployed            | employed         | INVALID_EMPLOYMENT                                 | Стабильность дохода. unemployed = немедленный отказ                                                  |
+| family        | enum    | да          | single / married / children                                          | married          |                                                    | Финансовая нагрузка домохозяйства                                                                    |
+| amount        | number  | да          | 10 000 – 5 000 000 ₽; доп. лимит: amount ≤ 10 × income               | 500000           | AMOUNT_LIMIT (решение); AMOUNT_OUT_OF_RANGE* (422) | Тело кредита. Проверяется дважды                                                                     |
+| term          | integer | да          | 3–60 мес.                                                            | 24               | TERM_OUT_OF_RANGE* (422)                           | Срок кредита → множитель аннуитета                                                                   |
+| decision      | enum    | да (сервер) | APPROVED / REFUSED / NEED_MORE_DATA / MANUAL_REVIEW                  | APPROVED         | —                                                  | Итог конвейера. Вычисляется, пользователем не изменяется. `MANUAL_REVIEW` зарезервирован             |
+| reason        | enum    | условно     | "" при APPROVED, иначе ровно 1 код из `08_reasons.md`                | AMOUNT_LIMIT     | —                                                  | Объяснение решения. У каждого не-APPROVED есть причина                                               |
+| client_id     | string  | да          | `^cli_[0-9]{4}$`                                                     | cli_0001         | INVALID_CLIENT_ID* (422)                           | Внешний ключ на клиента; вход для эмулятора СМЭВ                                                     |
+| passport_hash | string  | да          | `^[a-f0-9]{16}$`; SHA-256, усечённый до 16 hex; оригинал не хранится | f727a849055f2224 | INVALID_PASSPORT_HASH* (422)                       | Вход для эмулятора БКИ. Оригинал не хранится, хеш необратим; для продакшена — HMAC-SHA256 с секретом |
+| dti           | number  | да (сервер) | ≥ 0, 2 знака после точки; порог 0.5                                  | 0.12             | —                                                  | `dti = аннуитетный платёж / доход`. При `> 0.5` → `HIGH_DTI`. Пусто, если расчёт не выполнялся       |
+| bki_score     | integer | нет         | 300 ≤ score ≤ 850; **< 500 = отказ**                                 | 720              | —                                                  | Результат БКИ. Пусто, если БКИ не вызывалось. `delinquency=true` → отказ независимо от балла         |
+| smev_status   | enum    | да (сервер) | MATCH / MISMATCH / TIMEOUT / NOT_CALLED                              | MATCH            | EXTERNAL_TIMEOUT                                   | Верификация личности по паспорту                                                                     |
 
 ## Справочники (enum-значения)
 
