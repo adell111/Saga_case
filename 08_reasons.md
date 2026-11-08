@@ -26,6 +26,7 @@
 | LOW_SCORE          | Отказ        | score < 60                                                                                                                                                                                         | «Недостаточный балл для одобрения»                     |
 | VALIDATION_ERROR   | Нужны данные | age = integer and 18 - 70<br>or<br>income - number and > 0<br>or<br>amount - number and 10_000 - 5_000_000<br>or<br>term = integer and 3 - 60<br>or<br>passport_hash is present and 16 hex-symbols | «Недопустимые значение - {поле}                        |
 | TERM_OUT_OF_RANGE  | Отказ        | min_product_term <= term <= max_product_term                                                                                                                                                       | Недопустимый срок кредита                              |
+
 LOW_SCORE, EXTERNAL_TIMEOUT и VALIDATION_ERROR не встречаются в applications.csv, но необходимы для работы конвейера. 
 
 ## Критерий приёмки
