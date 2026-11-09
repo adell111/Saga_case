@@ -58,7 +58,7 @@ components:
           description: >-
             Код причины из 08_reasons.md, для APPROVED пустая строка.
             VALIDATION_ERROR это любая ошибка проверки полей заявки (какое именно поле,
-            видно в message). AMOUNT_OUT_OF_RANGE прототип отдаёт только для amount = inf
+            видно в message).
           enum:
             - AGE_OUT_OF_RANGE
             - INVALID_EMPLOYMENT
@@ -72,7 +72,6 @@ components:
             - LOW_SCORE
             - EXTERNAL_TIMEOUT
             - VALIDATION_ERROR
-            - AMOUNT_OUT_OF_RANGE
             - ''
         message:
           type: string
