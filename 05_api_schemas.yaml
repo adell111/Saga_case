@@ -7,7 +7,9 @@
 # Прототип не отбрасывает заявку с возрастом вне 18-70, а отвечает REFUSED с
 # причиной AGE_OUT_OF_RANGE (правило 1). Лимиты продукта prod_standard
 # (сумма до 1 000 000) дают REFUSED / AMOUNT_LIMIT.
-# Для NEED_MORE_DATA score и dti пустые: заявка не дошла до скоринга.
+# Для NEED_MORE_DATA из-за ошибки проверки данных score и dti пустые: заявка не дошла
+# до скоринга. При таймауте внешнего сервиса поля могут быть заполнены частично.
+# Поля ответа повторяют колонки decisions.csv. Текст для клиента лежит в поле message.
 
 openapi: 3.0.3
 info:
@@ -53,7 +55,10 @@ components:
           enum: [APPROVED, REFUSED, NEED_MORE_DATA, MANUAL_REVIEW]
         reason:
           type: string
-          description: Код причины из 08_reasons.md, для APPROVED пустая строка
+          description: >-
+            Код причины из 08_reasons.md, для APPROVED пустая строка.
+            VALIDATION_ERROR это любая ошибка проверки полей заявки (какое именно поле,
+            видно в message). AMOUNT_OUT_OF_RANGE прототип отдаёт только для amount = inf
           enum:
             - AGE_OUT_OF_RANGE
             - INVALID_EMPLOYMENT
@@ -62,31 +67,29 @@ components:
             - HIGH_DTI
             - BKI_DELINQUENCY
             - AMOUNT_LIMIT
+            - TERM_OUT_OF_RANGE
             - SMEV_MISMATCH
             - LOW_SCORE
             - EXTERNAL_TIMEOUT
-            - MISSING_AGE
-            - INVALID_FAMILY
+            - VALIDATION_ERROR
             - AMOUNT_OUT_OF_RANGE
-            - TERM_OUT_OF_RANGE
-            - INVALID_CLIENT_ID
-            - INVALID_PASSPORT_HASH
             - ''
-        client_text:
+        message:
           type: string
-          description: Понятный клиенту текст, для APPROVED пустая строка
+          description: Понятный клиенту текст (колонка message в decisions.csv), для APPROVED пустая строка
         score:
           type: integer
           nullable: true
           minimum: 0
           maximum: 100
-          description: Балл скоринга. Пусто, если заявка остановлена до скоринга (NEED_MORE_DATA)
+          description: Балл скоринга. Пусто, если заявка остановлена на проверке данных (VALIDATION_ERROR, MISSING_INCOME)
         dti:
           type: number
           nullable: true
           minimum: 0
-          description: Платёж по аннуитету делить на доход, порог 0.5. Пусто при NEED_MORE_DATA
+          description: Платёж по аннуитету делить на доход, порог 0.5, в ответе округлён до 2 знаков. Пусто, если заявка остановлена на проверке данных или доход равен нулю
         amount_approved:
+          description: Проект. Прототип сейчас не пишет это поле в decisions.csv
           type: number
           nullable: true
           minimum: 10000

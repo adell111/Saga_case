@@ -223,6 +223,8 @@ def normalize_app(app):
 
 def validate(app):
     """Проверка до внешних вызовов. Возвращает (reason, field) или None."""
+    if not re.fullmatch(r"app_[0-9]{4}", app.get("app_id", "")):
+        return "VALIDATION_ERROR", "app_id"
     # Возраст проверяется первым, но пустой возраст откладываем: по T2-3
     # при пустом доходе причина должна быть MISSING_INCOME.
     age_missing = False
@@ -551,32 +553,29 @@ def main():
 
     journal = Journal()
     results = []
-    prev_app_id = "app_0000"
-    for index, app in enumerate(apps, start=1):
-        prev_app_id = int(prev_app_id.split("_")[1])
-        if int(app["app_id"].split("_")[1]) > prev_app_id:
-            if not app.get("app_id"):
-                app["app_id"] = f"app_{index:04d}"
-            # В аудит пишем только корректный псевдонимный client_id, не произвольный текст.
-            client_id = app.get("client_id", "")
-            if not re.fullmatch(r"cli_[0-9]{4}", client_id):
-                client_id = ""
-            journal.audit(app["app_id"], client_id, "application_created")
-            try:
-                result = process(app, product, journal, args.use_csv_external, timeout_clients)
-            except Exception as exc:  # одна ошибка не останавливает остальные заявки
-                print(f"ERROR: {app['app_id']}: {type(exc).__name__}: {exc}", file=sys.stderr)
-                result = make_result(app, "NEED_MORE_DATA", "VALIDATION_ERROR",
-                                    message=reason_message("VALIDATION_ERROR", "application"),
-                                    step="validation_failed")
-            results.append(result)
-            journal.audit(app["app_id"], client_id, result["_step"],
-                        decision=result["decision"], reason=result["reason"],
-                        score=result["score"], dti=result["dti"],
-                        external=result["_external"])
-        else:
-            pass
-        prev_app_id = app["app_id"]
+    seen = set()
+    for app in apps:
+        if app["app_id"] in seen:
+            print(f"WARN: повтор {app['app_id']}, строка пропущена", file=sys.stderr)
+            continue
+        seen.add(app["app_id"])
+        # В аудит пишем только корректный псевдонимный client_id, не произвольный текст.
+        client_id = app.get("client_id", "")
+        if not re.fullmatch(r"cli_[0-9]{4}", client_id):
+            client_id = ""
+        journal.audit(app["app_id"], client_id, "application_created")
+        try:
+            result = process(app, product, journal, args.use_csv_external, timeout_clients)
+        except Exception as exc:  # одна ошибка не останавливает остальные заявки
+            print(f"ERROR: {app['app_id']}: {type(exc).__name__}: {exc}", file=sys.stderr)
+            result = make_result(app, "NEED_MORE_DATA", "VALIDATION_ERROR",
+                                 message=reason_message("VALIDATION_ERROR", "application"),
+                                 step="validation_failed")
+        results.append(result)
+        journal.audit(app["app_id"], client_id, result["_step"],
+                      decision=result["decision"], reason=result["reason"],
+                      score=result["score"], dti=result["dti"],
+                      external=result["_external"])
 
     try:
         write_decisions(args.out, results)
