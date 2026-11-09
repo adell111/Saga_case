@@ -57,7 +57,6 @@ REASON_MESSAGES = {
     "EXTERNAL_TIMEOUT": "Не удалось проверить данные, попробуйте позже",
     "LOW_SCORE": "Недостаточный балл для одобрения",
     "VALIDATION_ERROR": "Недопустимое значение",
-    "AMOUNT_OUT_OF_RANGE": "Недопустимое значение - amount",
     "TERM_OUT_OF_RANGE": "Недопустимый срок кредита",
 }
 
@@ -262,7 +261,7 @@ def validate(app):
     except ValueError:
         return "VALIDATION_ERROR", "amount"
     if not math.isfinite(amount):
-        return "AMOUNT_OUT_OF_RANGE", "amount"
+        return "VALIDATION_ERROR", "amount"
     if amount < 10_000 or amount > 5_000_000:
         return "VALIDATION_ERROR", "amount"
 
