@@ -25,7 +25,7 @@
 | EXTERNAL_TIMEOUT   | Нужны данные | bki_score/smev_status = timeout                                                                                                                                                                                                      | «Не удалось проверить данные, попробуйте позже»        |
 | LOW_SCORE          | Отказ        | score < 60                                                                                                                                                                                                                           | «Недостаточный балл для одобрения»                     |
 | VALIDATION_ERROR   | Нужны данные | age != integer or not in \[18; 70]<br>or<br>income != number or < 0<br>or<br>amount != number or not in \[10_000; 5_000_000]<br>or<br>term != integer or not in \[3; 60]<br>or<br>passport_hash is not present or not 16 hex-symbols | «Недопустимые значение - {поле}                        |
-| TERM_OUT_OF_RANGE  | Отказ        | min_product_term <= term <= max_product_term                                                                                                                                                                                         | Недопустимый срок кредита                              |
+| TERM_OUT_OF_RANGE  | Отказ        | term < min_product_term<br>or<br>term > max_product_term                                                                                                                                                                             | Недопустимый срок кредита                              |
 
 LOW_SCORE, EXTERNAL_TIMEOUT и VALIDATION_ERROR не встречаются в applications.csv, но необходимы для работы конвейера. 
 
