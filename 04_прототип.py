@@ -3,6 +3,7 @@
 CLI-прототип кредитного конвейера — кейс 2.
 
 Использование:
+    python 04_прототип.py
     python 04_прототип.py Данные/application.csv
     python 04_прототип.py Данные/application.csv --out decisions.csv
     python 04_прототип.py Данные/application.csv --use-csv-external
@@ -33,6 +34,11 @@ MAX_AMOUNT_TO_INCOME = 10
 MIN_INCOME = 30000
 # Возраст вне этих границ считаем не числом клиента, а ошибкой входных данных.
 PLAUSIBLE_AGE_LIMIT = 120
+
+BANNER_WIDTH = 41
+TEAM_NAME = "САГА"
+PROJECT_NAME = "Кредитный конвейер"
+VERSION = "v 0.0.1"
 
 EMPLOYMENT_POINTS = {
     "employed": 25,
@@ -545,15 +551,82 @@ def write_decisions(path, results):
             writer.writerow({field: result[field] for field in OUT_FIELDS})
 
 
+def print_banner():
+    inner = BANNER_WIDTH - 2
+    border = "=" * BANNER_WIDTH
+    lines = [
+        PROJECT_NAME.center(inner),
+        f"version: {VERSION}".center(inner),
+        f"produced by {TEAM_NAME}".center(inner),
+    ]
+    print(border, file=sys.stderr)
+    for line in lines:
+        print("|" + line + "|", file=sys.stderr)
+    print(border, file=sys.stderr)
+
+
+def ask(question, default=""):
+    suffix = f" [{default}]" if default else ""
+    answer = input(f"{question}{suffix}: ").strip().strip("\"'")
+    return answer or default
+
+
+def ask_yes_no(question, default=False):
+    hint = "Д/н" if default else "д/Н"
+    while True:
+        answer = input(f"{question} ({hint}): ").strip().lower()
+        if answer == "":
+            return default
+        if answer in ("д", "да", "y", "yes"):
+            return True
+        if answer in ("н", "нет", "n", "no"):
+            return False
+        print("Введите д или н")
+
+
+def default_applications_path():
+    here = Path(__file__).resolve().parent
+    for folder in (here, Path.cwd()):
+        path = folder / "Данные" / "application.csv"
+        if path.is_file():
+            return str(path)
+    return ""
+
+
+def fill_args_interactively(args):
+    print("Файл не указан, включён интерактивный режим.")
+    print("Enter оставляет значение в квадратных скобках. Выход: Ctrl+C.")
+    default_path = default_applications_path()
+    while True:
+        path = ask("Путь к CSV с заявками", default_path)
+        if path and Path(path).is_file():
+            break
+        print(f"Файл не найден: {path or '(пусто)'}. Попробуйте ещё раз.")
+    args.applications = path
+    args.out = ask("Куда записать решения (--out)", args.out)
+    args.use_csv_external = ask_yes_no("Брать ответы БКИ/СМЭВ из CSV (--use-csv-external)?")
+    args.timeout_clients = ask("Клиенты с таймаутом СМЭВ через запятую (--timeout-clients, Enter - никого)")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Кредитный конвейер — кейс 2")
-    parser.add_argument("applications", help="CSV с заявками")
+    parser.add_argument("applications", nargs="?",
+                        help="CSV с заявками (если не указан, включится интерактивный режим)")
     parser.add_argument("--out", default="decisions.csv", help="CSV с решениями")
     parser.add_argument("--use-csv-external", action="store_true",
                         help="брать ответы БКИ/СМЭВ из колонок CSV")
     parser.add_argument("--timeout-clients", default="",
                         help="client_id через запятую, для которых СМЭВ отвечает таймаутом")
     args = parser.parse_args()
+    print_banner()
+    if args.applications is None:
+        if not sys.stdin.isatty():
+            parser.error("не указан файл с заявками")
+        try:
+            fill_args_interactively(args)
+        except (EOFError, KeyboardInterrupt):
+            print("\nВыход", file=sys.stderr)
+            return 1
 
     timeout_clients = {item.strip() for item in args.timeout_clients.split(",") if item.strip()}
 
