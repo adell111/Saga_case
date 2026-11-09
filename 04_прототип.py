@@ -218,6 +218,13 @@ def normalize_app(app):
     app["employment"] = app["employment"].lower()
     app["family"] = app["family"].lower()
     app["passport_hash"] = app["passport_hash"].lower()
+    for key in ("age", "term"):  # 32.0 считаем целым числом 32
+        try:
+            number = float(app[key])
+        except ValueError:
+            continue
+        if math.isfinite(number) and number.is_integer():
+            app[key] = str(int(number))
     return app
 
 
