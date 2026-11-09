@@ -27,7 +27,7 @@
 | VALIDATION_ERROR   | Нужны данные | age != integer or not in \[18; 70]<br>or<br>income != number or < 0<br>or<br>amount != number or not in \[10_000; 5_000_000]<br>or<br>term != integer or not in \[3; 60]<br>or<br>passport_hash is not present or not 16 hex-symbols | «Недопустимые значение - {поле}                        |
 | TERM_OUT_OF_RANGE  | Отказ        | term < min_product_term<br>or<br>term > max_product_term                                                                                                                                                                             | Недопустимый срок кредита                              |
 
-LOW_SCORE, EXTERNAL_TIMEOUT и VALIDATION_ERROR не встречаются в applications.csv, но необходимы для работы конвейера. 
+LOW_SCORE, EXTERNAL_TIMEOUT, VALIDATION_ERROR и TERM_OUT_OF_RANGE не встречаются в applications.csv, но необходимы для работы конвейера. 
 
 ## Критерий приёмки
 
