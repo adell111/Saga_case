@@ -89,16 +89,18 @@ components:
           minimum: 0
           description: Платёж по аннуитету делить на доход, порог 0.5, в ответе округлён до 2 знаков. Пусто, если заявка остановлена на проверке данных или доход равен нулю
         amount_approved:
-          description: Проект. Прототип сейчас не пишет это поле в decisions.csv
+          description: Одобренная сумма, заполняется только для APPROVED (как колонка decisions.csv)
           type: number
           nullable: true
           minimum: 10000
         term_approved:
+          description: Одобренный срок в месяцах, только для APPROVED
           type: integer
           nullable: true
           minimum: 3
           maximum: 60
         rate:
+          description: Годовая ставка (0.18 = 18 %), только для APPROVED
           type: number
           nullable: true
           minimum: 0

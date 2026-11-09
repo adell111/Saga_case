@@ -22,7 +22,8 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-OUT_FIELDS = ["app_id", "decision", "reason", "score", "dti", "message"]
+OUT_FIELDS = ["app_id", "decision", "reason", "score", "dti", "message",
+              "amount_approved", "term_approved", "rate"]
 
 TIMEOUT_SECONDS = 3
 RETRY_DELAY_SECONDS = 0.5
@@ -447,7 +448,8 @@ def decide(app, score_total, dti, bki_score, delinquency, smev, product):
 
 
 def make_result(app, decision, reason, score_value="", dti="",
-                message="", step="decision_made", external=None):
+                message="", step="decision_made", external=None, approved=None):
+    approved = approved or {}
     return {
         "app_id": app["app_id"],
         "decision": decision,
@@ -455,6 +457,9 @@ def make_result(app, decision, reason, score_value="", dti="",
         "score": score_value,
         "dti": dti,
         "message": message,
+        "amount_approved": approved.get("amount", ""),
+        "term_approved": approved.get("term", ""),
+        "rate": approved.get("rate", ""),
         "_step": step,
         "_external": external or [],
     }
@@ -495,8 +500,14 @@ def process(app, product, journal, use_csv, timeout_clients):
 
     decision, reason = decide(app, score_total, dti_exact, bki_data["score"],
                               bki_data["delinquency"], smev["status"], product)
+    approved = None
+    if decision == "APPROVED":
+        amount = float(app["amount"])
+        approved = {"amount": int(amount) if amount.is_integer() else amount,
+                    "term": int(app["term"]), "rate": product["rate"]}
     return make_result(app, decision, reason, score_value=score_total, dti=dti,
-                       message=reason_message(reason), external=traces)
+                       message=reason_message(reason), external=traces,
+                       approved=approved)
 
 
 def read_applications(path):
